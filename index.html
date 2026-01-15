@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amir Basrun | Certified Shariah Financial Planner</title>
+
+<meta name="description" content="Amir Basrun (Sir Amir) adalah Perancang Kewangan Shariah (CFP, IFP) yang membantu keluarga Malaysia membina legasi menerusi Takaful, Pelaburan & Wasiat. Dapatkan konsultasi percuma.">
+
+<style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --primary: #0f172a; /* Biru Gelap Navy - Melambangkan Kepercayaan */
+            --accent: #d97706; /* Emas/Amber - Melambangkan Kekayaan */
+            --accent-hover: #b45309;
+            --text-dark: #334155;
+            --text-light: #64748b;
+            --white: #ffffff;
+            --light-bg: #f8fafc;
+            --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-main); line-height: 1.6; color: var(--text-dark); background-color: var(--white); }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        img { max-width: 100%; height: auto; display: block; }
+
+/* --- UTILITIES --- */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 15px 35px;
+            font-weight: bold;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+            border: none;
+        }
+        .btn:hover { background-color: var(--accent-hover); transform: translateY(-2px); }
+        .section-padding { padding: 80px 0; }
+        .text-center { text-align: center; }
+        .highlight { color: var(--accent); }
+
+/* --- HEADER --- */
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); text-transform: uppercase; }
+        .nav-links a { margin-left: 20px; font-weight: 500; font-size: 0.9rem; }
+
+/* --- HERO SECTION --- */
+        .hero {
+            padding-top: 160px;
+            padding-bottom: 80px;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            width: 100%;
+        }
+        .hero-content { padding-bottom: 20px; }
+        .hero-content h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        .hero-content p { font-size: 1.1rem; color: var(--text-light); margin-bottom: 30px; }
+
+/* --- HERO IMAGE STYLING (JPG Card Style) --- */
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero-image img {
+            width: 100%;
+            max-width: 550px; /* Saiz optimum untuk potret */
+            height: auto;
+            border-radius: 25px; /* Bucu melengkung untuk gaya moden */
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15); /* Bayang-bayang untuk kedalaman */
+        }
+
+/* --- STATS SECTION (ANIMATED) --- */
+        .stats-bar { background-color: var(--primary); color: var(--white); padding: 60px 0; }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center; }
+        .stat-item h3 { font-size: 2.5rem; color: var(--accent); margin-bottom: 5px; font-weight: 800; }
+        .stat-item p { font-size: 0.9rem; opacity: 0.8; text-transform: uppercase; letter-spacing: 1px; }
+
+/* --- STORY SECTION --- */
+        .story-section { background-color: var(--white); }
+        .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .story-img img { border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .story-content h2 { font-size: 2.2rem; color: var(--primary); margin-bottom: 20px; }
+        .story-content p { margin-bottom: 20px; font-size: 1.05rem; }
+        .credentials { margin-top: 20px; padding: 20px; background: var(--light-bg); border-left: 4px solid var(--accent); border-radius: 4px; }
+        .credentials h4 { color: var(--primary); margin-bottom: 10px; }
+        .credentials ul { list-style: none; }
+        .credentials li { margin-bottom: 8px; font-size: 0.9rem; display: flex; align-items: center; }
+        .credentials li::before { content: "✓"; color: var(--accent); margin-right: 10px; font-weight: bold; }
+
+/* --- SERVICES SECTION --- */
+        .services { background-color: var(--light-bg); }
+        .services h2 { margin-bottom: 50px; font-size: 2.2rem; color: var(--primary); }
+        .service-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 15px;
+            transition: 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border-top: 5px solid transparent;
+        }
+        .card:hover { transform: translateY(-10px); border-top: 5px solid var(--accent); }
+        .icon { font-size: 2rem; margin-bottom: 20px; color: var(--primary); }
+        .card h3 { margin-bottom: 15px; color: var(--primary); }
+
+/* --- CTA FORM SECTION --- */
+        .cta-section { padding: 100px 0; background: var(--primary); color: var(--white); }
+        .cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .cta-text h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        .form-box {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            color: var(--text-dark);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+        }
+        .form-group input:focus, .form-group select:focus { border-color: var(--accent); }
+        .form-submit { width: 100%; font-size: 1rem; }
+
+/* --- FOOTER --- */
+        footer { background: #020617; color: #94a3b8; padding: 50px 0; font-size: 0.9rem; }
+        .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .license { margin-top: 20px; font-size: 0.8rem; opacity: 0.7; }
+
+/* --- RESPONSIVE --- */
+        @media (max-width: 968px) {
+            .hero-content h1 { font-size: 2.2rem; }
+             .cta-text h2 { font-size: 2rem; }
+             .stat-item h3 { font-size: 1.8rem; }
+        }
+
+@media (max-width: 768px) {
+            .hero-grid, .story-grid, .cta-grid, .stats-grid, .service-cards { grid-template-columns: 1fr; gap: 40px;}
+            .hero-image { order: -1; } 
+            .nav-links { display: none; }
+            .stats-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+            .hero { padding-top: 100px; text-align: center; padding-bottom: 60px;}
+        }
+    </style>
+</head>
+<body>
+
+<header>
+        <div class="container">
+            <nav>
+                <div class="logo">AMIR <span class="highlight">BASRUN</span></div>
+                <div class="nav-links">
+                    <a href="#about">Tentang Saya</a>
+                    <a href="#services">Servis</a>
+                    <a href="#contact" style="color: var(--accent); font-weight: bold;">Dapatkan Konsultasi</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+<section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>Kita Mungkin Tak Kekal, <br><span class="highlight">Tapi Tanggungjawab Kita Boleh Diteruskan.</span></h1>
+                <p>Saya membantu keluarga muda Malaysia membina legasi kewangan dan perlindungan yang patuh Shariah, demi masa depan mereka yang tersayang.</p>
+                <a href="#contact" class="btn">Dapatkan Roadmap Percuma Anda</a>
+                <p style="margin-top: 15px; font-size: 0.85rem; color: #64748b;">*Certified Financial Planner (CFP) & Islamic Financial Planner (IFP)</p>
+            </div>
+            <div class="hero-image">
+                <img src="https://static.wixstatic.com/media/fe45aa_c86590c17cdc4cafbb8a6b2e65d22e84~mv2.jpg" alt="Amir Basrun - Shariah Financial Planner">
+            </div>
+        </div>
+    </section>
+
+<section class="stats-bar" id="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>~<span class="count" data-target="10">0</span> Tahun</h3>
+                    <p>Pengalaman Industri</p>
+                </div>
+                <div class="stat-item">
+                    <h3>RM <span class="count" data-target="592">0</span>K+</h3>
+                    <p>Tuntutan Dibayar (Personal)</p>
+                </div>
+                <div class="stat-item">
+                    <h3><span class="count" data-target="157">0</span>+</h3>
+                    <p>Keluarga Dilindungi</p>
+                </div>
+                <div class="stat-item">
+                    <h3>RM <span class="count" data-target="26">0</span>M</h3>
+                    <p>Jumlah Nilai Perlindungan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="about" class="section-padding story-section">
+        <div class="container story-grid">
+            <div class="story-img">
+                <img src="https://arleta.site/interactivelink/19/amir-sitting.JPEG" alt="Amir Basrun Consulting">
+            </div>
+            <div class="story-content">
+                <p class="highlight" style="font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Dari Jurutera Kepada Perancang Kewangan</p>
+                <h2>Dari Fizik Perubatan ke Kesihatan Kewangan</h2>
+
+<p style="font-size: 1.15rem; font-weight: 500; color: var(--primary); margin-bottom: 25px; border-left: 3px solid var(--accent); padding-left: 15px;">
+                    Hai, saya Amir Basrun. Ramai klien memanggil saya "Sir Amir"—satu panggilan mesra yang mengingatkan saya bahawa peranan utama saya adalah untuk berkhidmat dan membimbing anda.
+                </p>
+
+<p>Saya tidak bermula dalam bidang kewangan. Saya bermula sebagai Jurutera dengan Sarjana dalam Fizik Perubatan. Saya dilatih untuk menganalisis data dan menyelesaikan masalah rumit dengan ketepatan.</p>
+                <p>Namun, saya melihat realiti kehidupan yang menyentuh hati. Saya melihat rakan-rakan bergelut apabila musibah melanda, simpanan habis sekelip mata kerana tiada perlindungan.</p>
+                <p><strong>Itu mengubah misi saya.</strong> Hari ini, saya menggunakan kepakaran teknikal saya untuk membina pelan kewangan yang kukuh dan sistematik untuk keluarga anda.</p>
+
+<div class="credentials">
+                    <h4>Kelayakan Profesional</h4>
+                    <ul>
+                        <li>Certified Financial Planner (CFP) & IFP</li>
+                        <li>Islamic Estate Planner (IEP) Bertauliah</li>
+                        <li>AIA Certified FinCoach Professional</li>
+                        <li>Penasihat Unit Amanah (Kenanga Investor Berhad)</li>
+                        <li>Penasihat Perancangan Harta (As-Salihin Trustee Berhad)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="services" class="section-padding services">
+        <div class="container">
+            <div class="text-center">
+                <h2>Penyelesaian Shariah Sehenti (One-Stop)</h2>
+                <p style="max-width: 650px; margin: 0 auto 50px auto;">Anda tidak perlukan lima ejen berbeza. Saya menyediakan ekosistem lengkap untuk kekayaan anda, di bawah satu bumbung yang patuh Shariah.</p>
+            </div>
+            <div class="service-cards">
+                <div class="card">
+                    <div class="icon">🛡️</div>
+                    <h3>Perlindungan Takaful</h3>
+                    <p>Pelan perlindungan perubatan dan hayat komprehensif untuk ketua keluarga dan anak-anak. (Mewakili AIA Public Takaful Berhad).</p>
+                </div>
+                <div class="card">
+                    <div class="icon">📈</div>
+                    <h3>Pelaburan Shariah</h3>
+                    <p>Kembangkan kekayaan anda dengan dana Unit Amanah yang patuh Shariah sepenuhnya melalui Kenanga Investor Berhad.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">📝</div>
+                    <h3>Wasiat & Pusaka (IEP)</h3>
+                    <p>Pastikan aset anda diagihkan mengikut hasrat anda dan hukum Faraid bersama As-Salihin Trustee Berhad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="contact" class="cta-section">
+        <div class="container cta-grid">
+            <div class="cta-text">
+                <h2>Mari Nilai Situasi Anda</h2>
+                <p style="margin-bottom: 20px; font-size: 1.1rem; opacity: 0.9;">Tidak mengapa jika anda hanya mahu tahu. Misi saya adalah menjadikan perlindungan mudah diakses.</p>
+                <p style="margin-bottom: 30px; opacity: 0.8;">Kita akan senaraikan keutamaan anda dan mulakan dengan pelan yang sesuai dengan bajet dan kapasiti anda. Tiada paksaan, hanya kejelasan.</p>
+
+<div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; font-size: 0.9rem;">
+                    <strong>Prestasi Pasukan Agensi:</strong><br>
+                    RM 63M Jumlah Nilai Perlindungan & RM 636.8K Tuntutan Dibayar oleh pasukan saya. Anda berada di tangan yang selamat.
+                </div>
+            </div>
+
+<div class="form-box">
+                <form id="leadForm">
+                    <div class="form-group">
+                        <label>Nama Anda</label>
+                        <input type="text" id="nameInput" placeholder="Contoh: Ahmad Faizal" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Nombor Telefon (WhatsApp)</label>
+                        <input type="tel" id="phoneInput" placeholder="012-3456789" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Keutamaan Semasa Anda?</label>
+                        <select id="priorityInput">
+                            <option>Perlindungan Keluarga (Takaful)</option>
+                            <option>Pelaburan (Unit Amanah)</option>
+                            <option>Wasiat & Perancangan Pusaka</option>
+                            <option>Semak Semula Polisi Sedia Ada</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Status Keluarga</label>
+                        <select id="statusInput">
+                            <option>Berkahwin & Ada Anak</option>
+                            <option>Berkahwin (Belum Ada Anak)</option>
+                            <option>Bujang</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn form-submit">Minta Sesi Konsultasi Percuma</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+<footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3 style="color: var(--white); text-transform: uppercase;">AMIR BASRUN | CFP, IFP</h3>
+                    <p>Membina Ketahanan Kewangan untuk Keluarga Malaysia.</p>
+                </div>
+                <div>
+                   <p>Lokasi: Kuala Lumpur / Selangor</p>
+                </div>
+            </div>
+            <div class="license">
+                <p>Wakil Sah untuk AIA Public Takaful Berhad, Kenanga Investor Berhad, dan As-Salihin Trustee Berhad.</p>
+                <p>© 2026 Amir Basrun. Hak Cipta Terpelihara.</p>
+            </div>
+        </div>
+    </footer>
+
+<script>
+        // 1. WHATSAPP FORM HANDLING (Menghantar data terus ke WhatsApp)
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Mengambil nilai dari borang
+            const name = document.getElementById('nameInput').value;
+            const phone = document.getElementById('phoneInput').value;
+            const priority = document.getElementById('priorityInput').value;
+            const status = document.getElementById('statusInput').value;
+            
+            // Nombor Telefon Anda
+            const targetNumber = '60195582585';
+            
+            // Membina mesej
+            const message = `Hai Sir Amir, saya berminat nak dapatkan roadmap kewangan dan konsultasi.%0A%0A*Nama Anda:* ${name}%0A*Nombor Telefon (WhatsApp):* ${phone}%0A*Keutamaan Semasa Anda?* ${priority}%0A*Status Keluarga:* ${status}`;
+            
+            // Membuka tetingkap baru ke WhatsApp
+            window.open(`https://wa.me/${targetNumber}?text=${message}`, '_blank');
+        });
+
+        // 2. SMOOTH SCROLLING (Skrol lancar apabila klik menu)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId !== '#') {
+                    document.querySelector(targetId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // 3. NUMBER COUNTER ANIMATION (Animasi nombor naik)
+        const counters = document.querySelectorAll('.count');
+        const speed = 200; 
+
+        const startCounters = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const updateCount = () => {
+                        const target = +counter.getAttribute('data-target');
+                        const count = +counter.innerText;
+                        const inc = target / speed;
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count + inc);
+                            setTimeout(updateCount, 20);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    updateCount();
+                    observer.unobserve(counter);
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(startCounters, { threshold: 0.5 });
+        counters.forEach(counter => observer.observe(counter));
+    </script>
+</body>
+</html>
